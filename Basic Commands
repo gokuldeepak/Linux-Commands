@@ -1,0 +1,3 @@
+lsblk
+df -h
+cd /etc/*-release
