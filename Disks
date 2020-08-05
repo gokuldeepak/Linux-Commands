@@ -1,0 +1,5 @@
+#Format to ext4
+ sudo mkfs.ext4 /dev/sdb
+ 
+#Mount Disk 
+sudo mount /dev/sdb /mnt/anydiskname
