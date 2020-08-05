@@ -7,3 +7,7 @@ sudo mount /dev/sdb /mnt/anydiskname
 #Mount automatically after every reboot
 nano /etc/fstab
 /dev/sdb     /mnt/sdb      ext4        defaults      0       0
+
+
+#Unmount the disk
+ sudo umount /dev/sdb
