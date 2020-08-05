@@ -19,4 +19,7 @@
  curl https://wordpress.org/latest.zip -o filename.zip
  
  
-
+/*ctrl+c - polite kill
+  ctrl+z - Sleep ssignal (later can be resumed */
+  
+  
