@@ -6,11 +6,15 @@
  cd /etc/*-release
  lsb_release -a
 
-#Find ip address
+#Find ip address - Private
  hostname -I
  ip addr
  ifconfig
 
+#Find ip address - Public
+ curl https://icanhazip.com
 
-
+#Downloading file
+ curl http://wordpress.org/latest.zip --output filename.zip
+ 
 
