@@ -1,3 +1,16 @@
-lsblk
-df -h
-cd /etc/*-release
+#About Volumes:
+ lsblk
+ df -h
+
+#Find Linux version:
+ cd /etc/*-release
+ lsb_release -a
+
+#Find ip address
+ hostname -I
+ ip addr
+ ifconfig
+
+
+
+
