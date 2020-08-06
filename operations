@@ -13,3 +13,9 @@ sudo rsync -aAXv --delete --exclude=/dev/* --exclude=/proc/* --exclude=/sys/* --
 #automatically delete source folder after successful backup    --remove-source-files
  [root@gokul]# rsync --remove-source-files -zvh backup.tar /tmp/backups/
 
+
+
+#Restore Backed up Ubuntu
+sudo rsync -aAXv --delete --exclude="lost+found" /mnt/usb/ /system
+
+/* remember not to use / after system as the files have to be copied under system and not under /system/usb
