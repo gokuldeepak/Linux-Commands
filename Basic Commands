@@ -22,4 +22,6 @@
 /*ctrl+c - polite kill
   ctrl+z - Sleep ssignal (later can be resumed */
   
-  
+ 
+ #Find the file system
+  df -T /mnt/d 
