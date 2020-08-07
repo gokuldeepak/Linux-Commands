@@ -37,6 +37,9 @@
 #delete user
  deluser gokul
   
+#List all users
+ cat /etc/passwd
+ 
  
  #Find the file system
   df -T /mnt/d 
