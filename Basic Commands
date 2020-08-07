@@ -1,6 +1,10 @@
 #About Volumes:
  lsblk
  df -h
+ 
+#RAM Availablity and Processes
+ htop
+ top
 
 #Find Linux version:
  cd /etc/*-release
@@ -21,6 +25,17 @@
  
 /*ctrl+c - polite kill
   ctrl+z - Sleep ssignal (later can be resumed */
+  
+  
+  
+#add user
+ adduser gokul
+
+#add password
+ passwd
+
+#delete user
+ deluser gokul
   
  
  #Find the file system
