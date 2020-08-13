@@ -47,3 +47,7 @@
   
   # to show recent files at last
   ls -lrt
+
+
+#listing all opened ports
+ sudo lsof -i -P -n
