@@ -1,0 +1,23 @@
+This might be because useradd didn't create a home directory for your new user. You should use
+
+adduser xyz
+instead and avoid using useradd since it is a backend command needing more input.
+
+See also this answer, man useradd and man adduser.
+
+Or if you still want to use useradd use at least
+
+useradd -m xyz
+to create a home directory. But this still might be insufficient.
+
+Before starting now you might want to remove the user you created wrong by
+
+userdel xyz
+
+
+Do not use useradd for desktop. you can only do that for server
+
+sudo adduser gokul admin 
+sudo adduser gokul sudo
+
+/* use sudo or admin depending on the need*/
