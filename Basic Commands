@@ -53,7 +53,12 @@
  sudo lsof -i -P -n
 
 
-change password rules and length
+#change password rules and length
  sudo nano /etc/pam.d/common-password
    password     [success=1 default=ignore]    pam_unix.so obscure sha512 minlen=2
 
+#uninstal application:
+ sudo apt-get remove --purge {package-name}
+ sudo apt-get autoremove
+ sudo apt-get autoclean
+ sudo apt-get clean
