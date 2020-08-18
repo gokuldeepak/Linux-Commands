@@ -56,6 +56,8 @@
 #change password rules and length
  sudo nano /etc/pam.d/common-password
    password     [success=1 default=ignore]    pam_unix.so obscure sha512 minlen=2
+ /*Remove obscure if we don't want the password rules*/
+ /* use sudo passwd if the error manipulation error occurs*/
 
 #uninstal application:
  sudo apt-get remove --purge {package-name}
