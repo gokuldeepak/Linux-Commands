@@ -69,7 +69,7 @@
 
 #How to Get the Size of a Directory in Linux
 
-sudo du -sh /var
+sudo du -sh /*
 sudo du -shc /var/*
 sudo du -h /var/ | sort -rh | head -5
 
