@@ -1,3 +1,8 @@
 #exclude certain folders while copying in AWS S3
 
 aws s3 cp data/ s3://bucket-name/data/201707/ --recursive --exclude 'data/new/*' --exclude 'data/new1/*'
+
+
+#Find the total size of a S3 bucket
+aws s3 ls s3://mybucket --recursive --human-readable --summarize
+
