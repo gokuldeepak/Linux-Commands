@@ -73,3 +73,6 @@ sudo du -sh /var
 sudo du -shc /var/*
 sudo du -h /var/ | sort -rh | head -5
 
+
+#Copy files through scp using pemkey
+scp -i key.pem ec2-user@8.8.8.8:/location/ /destination/in/local/system 
