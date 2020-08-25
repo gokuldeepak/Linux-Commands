@@ -12,3 +12,6 @@ sudo apt install google-chrome-stable
 
 sudo apt remove google-chrome-stable
 
+
+sudo apt install ./installer-stickynotes.deb
+
