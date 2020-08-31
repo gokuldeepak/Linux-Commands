@@ -68,3 +68,13 @@ This keyboard shortcut allows you to perform a search in your command history. J
 If you want to see more commands for the same string, just keep pressing Ctrl + R.
 
 You can press enter to run the command selected or press Esc to come out of the search with the last search result.
+
+
+
+Host targaryen
+    HostName 192.168.1.10
+    User daenerys
+    Port 7654
+    IdentityFile ~/.ssh/targaryen.key
+
+
