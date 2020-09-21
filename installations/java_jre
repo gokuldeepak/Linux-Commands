@@ -1,0 +1,21 @@
+sudo apt update
+java -version
+sudo apt install default-jre
+javac -version
+sudo update-alternatives --config java
+
+
+Output
+There are 2 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                            Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java      1111      auto mode
+  1            /usr/lib/jvm/java-11-openjdk-amd64/bin/java      1111      manual mode
+* 2            /usr/lib/jvm/java-11-oracle/bin/java             1091      manual mode
+
+
+sudo nano /etc/environment
+  JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+source /etc/environment
+echo $JAVA_HOME
