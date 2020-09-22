@@ -1,0 +1,49 @@
+1) Install Java JRE 11 or 8
+
+
+2) Download Jira
+  Jira Software at https://www.atlassian.com/software/jira/download
+  
+3) Create Installation Directory
+
+$ mkdir jirasoftware
+$ tar -xzf atlassian-jira-software-X.X.X.tar.gz -C <installation-directory>
+$ cd <installation-directory>
+$ chown -R jira <installation-directory>
+$ chmod -R u=rwx,go-rwx <installation-directory>
+
+4)Create Home Directory
+
+$ mkdir jirasoftware-home
+$ chown -R jira <home-directory>
+$ chmod -R u=rwx,go-rwx <home-directory>
+export JIRA_HOME=/path/to/home-directory
+
+Edit <installation-directory>\atlassian-jira\WEB-INF\classes\jira-application.properties file in any text editor.
+     jira.home=/var/jirasoftware-home
+
+5)Check the ports
+
+Edit <installation-directory>\conf\server.xml
+Change the Server port (8005) and the Connector port (8080) to free ports on your server.
+In the example below we've changed the Server port to 5005 and the Connector port to 5050.
+  <Server port="5005" shutdown="SHUTDOWN">
+    ...
+   <Service name="Catalina">
+      <Connector port="5050"
+         maxThreads="150"
+         minSpareThreads="25"
+         connectionTimeout="20000"
+         enableLookups="false"
+         maxHttpHeaderSize="8192"
+         protocol="HTTP/1.1"
+         useBodyEncodingForURI="true"
+         redirectPort="8443"
+         acceptCount="100"
+         disableUploadTimeout="true"/>
+
+
+6) Start Jira
+
+$ sudo su <user>
+$ ./start-jira.sh
