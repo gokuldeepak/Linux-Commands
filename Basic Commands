@@ -76,3 +76,7 @@ sudo du -h /var/ | sort -rh | head -5
 
 #Copy files through scp using pemkey
 scp -i key.pem ec2-user@8.8.8.8:/location/ /destination/in/local/system 
+
+
+# find the number of files in folder
+ls -1 | wc -l
