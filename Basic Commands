@@ -80,3 +80,7 @@ scp -i key.pem ec2-user@8.8.8.8:/location/ /destination/in/local/system
 
 # find the number of files in folder
 ls -1 | wc -l
+
+
+#Find checksum
+md5sum file.war
