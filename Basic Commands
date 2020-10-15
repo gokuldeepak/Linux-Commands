@@ -84,3 +84,6 @@ ls -1 | wc -l
 
 #Find checksum
 md5sum file.war
+
+#Infinite loop in linux command 
+while sleep 2; do echo thinking; done
