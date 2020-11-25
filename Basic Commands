@@ -87,3 +87,8 @@ md5sum file.war
 
 #Infinite loop in linux command 
 while sleep 2; do echo thinking; done
+
+
+#to remove known host
+ssh-keygen -f "/root/.ssh/known_hosts" -R "107.21.255.140"
+
