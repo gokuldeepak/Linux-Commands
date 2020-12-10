@@ -1,0 +1,18 @@
+sudo apt-get update
+	sudo apt-get install postgresql postgresql-contrib postgresql-client
+	sudo apt-get install postgres-server-dev-9.3
+
+
+
+sudo su postgres
+psql
+create user sago 
+CREATE DATABASE testdb;
+ALTER DATABASE testdb OWNER TO sago;
+//edit in the pg_hba.conf file
+     local all all 		trust
+     host all all     127.0.0.1/32 trust
+     host all all     10.0.0.1/32 trust
+//if you want to use password replace trust /peer with md5
+//now from ec2-user 
+psql -U sago testdb
