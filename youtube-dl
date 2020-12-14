@@ -1,0 +1,50 @@
+To download from youtube-dl
+
+http://youtube-dl.org/
+
+First install from the apt-get repository. It is outdated so then update from the official repository
+
+1) sudo apt-get install youtube-dl
+2) sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+3) sudo chmod a+rx /usr/local/bin/youtube-dl
+4) youtube-dl -U
+5) youtube-dl --version
+
+To download with playlist and chapter name:
+youtube-dl --cookies "./udemy-cookie.txt" -o "path\to\%(playlist_title)s\%(chapter)s\%(playlist_index)s - %(title)s.%(ext)s" --playlist-start 1 --write-sub --sub-lang fr --write-description --write-info-json --write-annotations http://www.udemy.com/course/docker-mastery/learn/lecture/6758266#overview
+
+
+To find all available the Video Quality:
+youtube-dl -F --cookies "./udemy-cookie.txt" http://www.udemy.com/docker-mastery/learn/lecture/6758266#overview
+
+[info] Available formats for 21024748:
+format code  extension  resolution note
+144p         mp4        256x144     254k , libx264@ 192k, 30fps, aac  @ 62k (44100Hz)
+hls-199      mp4        640x360     199k , avc1.4d401e, 30.0fps, mp4a.40.5
+hls-246      mp4        640x360     246k , avc1.4d401e, 30.0fps, mp4a.40.5
+hls-293      mp4        640x360     293k , avc1.4d401e, 30.0fps, mp4a.40.5
+hls-484      mp4        640x360     484k , avc1.4d401e, 30.0fps, mp4a.40.5
+360p         mp4        640x360     792k , libx264@ 667k, 30fps, aac  @125k (44100Hz)
+hls-725      mp4        768x432     725k , avc1.4d401e, 30.0fps, mp4a.40.5
+480p         mp4        854x480    1413k , libx264@1288k, 30fps, aac  @125k (44100Hz)
+hls-1100     mp4        1024x576   1100k , avc1.4d401f, 30.0fps, mp4a.40.5
+hls-1672     mp4        1280x720   1672k , avc1.4d401f, 30.0fps, mp4a.40.5
+720p         mp4        1280x720   2907k , libx264@2782k, 30fps, aac  @125k (44100Hz)
+hls-3452     mp4        1920x1080  3452k , avc1.4d4028, 30.0fps, mp4a.40.5 (best)
+[download] Downloading video 3 of 150
+
+
+To download a particular video quality:
+youtube-dl -f 720p --cookies "./udemy-cookie.txt" http://www.udemy.com/docker-mastery/learn/lecture/6758266#overview
+
+Simply Download the best video resolution:
+youtube-dl --cookies "./udemy-cookie.txt" http://www.udemy.com/docker-mastery/learn/lecture/6758266#overview
+
+
+
+
+P.S:
+
+1) Remember to use firefox plugin to export cookie  https://addons.mozilla.org/en-US/firefox/addon/export-cookies-txt/
+2) remove the term course from the link  http://www.udemy.com/course/docker-mastery/  to  http://www.udemy.com/docker-mastery/
+else there will be an error like ERROR: Unable to download JSON metadata: HTTP Error 403: Forbidden (caused by HTTPError()); please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; type  youtube-dl -U  to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.
