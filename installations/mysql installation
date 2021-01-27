@@ -14,7 +14,7 @@ If we can't login we have to change auth socket to mysql_native_password
 SELECT user,authentication_string,plugin,host FROM mysql.user;
 
 
-ALTER USER ‘root’@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘password’;
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 FLUSH PRIVILEGES;
 now command mysql should not work from root. only mysql -u root -p should only work
 
