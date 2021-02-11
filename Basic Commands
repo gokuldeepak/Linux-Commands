@@ -95,3 +95,8 @@ ssh-keygen -f "/root/.ssh/known_hosts" -R "107.21.255.140"
 # Searching particular word inside the file
 grep -rnw '/' -e 'word'
 grep -rnw '/' -e 'pattern'
+
+
+
+For Notification in Ubuntu
+notify-send This is Just a Notification
