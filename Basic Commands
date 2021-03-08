@@ -100,3 +100,9 @@ grep -rnw '/' -e 'pattern'
 
 For Notification in Ubuntu
 notify-send This is Just a Notification
+
+
+
+#Find IP addresses V4 and V6
+ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+
