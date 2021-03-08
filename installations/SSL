@@ -1,0 +1,66 @@
+sudo apt-get update
+sudo apt-get install mysql-server
+
+sudo apt install nginx
+
+sudo ufw app list
+sudo ufw allow 'Nginx HTTP'
+sudo ufw status
+ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+curl -4 icanhazip.com
+sudo systemctl enable nginx
+
+sudo mkdir -p /var/www/example.com/html
+sudo chown -R $USER:$USER /var/www/example.com/html
+sudo chmod -R 755 /var/www/example.com
+nano /var/www/example.com/html/index.html
+
+sudo nano /etc/nginx/sites-available/example.com
+
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /var/www/example.com/html;
+        index index.php index.html index.htm index.nginx-debian.html;
+
+        server_name example.com www.example.com;
+
+        location / {
+     try_files $uri $uri/ /index.php?$args;
+
+        }
+location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+
+                # With php-fpm (or other unix sockets):
+                fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+                # With php-cgi (or other tcp sockets):
+        #       fastcgi_pass 127.0.0.1:9000;
+        }
+
+}
+
+
+sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
+
+sudo nano /etc/nginx/nginx.conf
+
+    uncomment the line ...
+    server_names_hash_bucket_size 64;
+
+
+
+sudo nginx -t
+
+sudo systemctl restart nginx
+
+
+
+sudo ufw status
+sudo ufw allow 'Nginx Full'
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt install python-certbot-nginx
+sudo certbot --nginx -d example.com -d www.example.com
+sudo certbot renew --dry-run
+
