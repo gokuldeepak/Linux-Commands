@@ -1,0 +1,14 @@
+
+
+Installed Apache Tomcat 8.5.59 from https://tomcat.apache.org/download-80.cgi 
+
+Wget https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.59/bin/apache-tomcat-8.5.59.tar.gz 
+
+ 
+
+Tar -xvf apache-tomcat-8.5.59.tar.gz 
+
+Ln -s apache-tomcat-8.5.59 tomcat 
+
+
+ 
