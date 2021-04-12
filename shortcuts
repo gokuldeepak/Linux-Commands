@@ -77,4 +77,33 @@ Host targaryen
     Port 7654
     IdentityFile ~/.ssh/targaryen.key
 
+Super key: Opens Activities search
+
+Ctrl+Alt+T: Ubuntu terminal shortcut
+
+3. Super+L or Ctrl+Alt+L: Locks the screen
+
+4. Super+D or Ctrl+Alt+D: Show desktop
+
+5. Super+A: Shows the application menu
+
+6. Super+Tab or Alt+Tab: Switch between running applications
+
+7. Super+Arrow keys: Snap windows
+
+8. Super+M: Toggle notification tray
+
+9. Super+Space: Change input keyboard (for multilingual setup)
+
+
+10. Alt+F2: Run console
+
+11. Ctrl+Q: Close an application window
+
+12. Ctrl+W: Close a tab
+
+13. Ctrl+Alt+arrow: Move between workspaces
+
+14. Ctrl+Alt+Del: Log out
+
 
