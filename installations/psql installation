@@ -1,0 +1,14 @@
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib postgresql-client
+sudo apt-get install postgres-server-dev-9.3
+
+
+sudo su postgres
+psql
+create user gokul
+create database testdb
+alter database testdb owner to sago;
+
+edit pg_hba.conf
+
+psql -U gokul testdb;
