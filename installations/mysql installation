@@ -2,7 +2,12 @@ ubuntu 18.04
 
 sudo apt update
 sudo apt install mysql-server
+sudo su
 sudo mysql_secure_installation
+
+
+sudo su
+mysql
 CREATE USER 'gokul'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'gokul'@'localhost' WITH GRANT OPTION;
 
