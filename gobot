@@ -1,0 +1,112 @@
+#! /bin/bash
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+logocol=1
+clear
+for logocolour in 1 2 3 4 5
+do
+#clear
+#sleep 0.1
+if [ $logocol == 1 ]
+then
+clear
+echo -e "${GREEN}
+
+${YELLOW}░██████╗░░█████╗░${GREEN}██████╗░░█████╗░████████╗
+${YELLOW}██╔════╝░██╔══██╗${GREEN}██╔══██╗██╔══██╗╚══██╔══╝
+${YELLOW}██║░░██╗░██║░░██║${GREEN}██████╦╝██║░░██║░░░██║░░░
+${YELLOW}██║░░╚██╗██║░░██║${GREEN}██╔══██╗██║░░██║░░░██║░░░
+${YELLOW}╚██████╔╝╚█████╔╝${GREEN}██████╦╝╚█████╔╝░░░██║░░░
+${YELLOW}░╚═════╝░░╚════╝░${GREEN}╚═════╝░░╚════╝░░░░╚═╝░░░
+
+
+${RED}Welcome to ${NC}GoBot ${NC}
+"
+logocol=2
+fi
+sleep 0.2
+if [ $logocol == 2 ]
+then
+clear
+echo -e "${RED}
+
+${YELLOW}░██████╗░░█████╗░${RED}██████╗░░█████╗░████████╗
+${YELLOW}██╔════╝░██╔══██╗${RED}██╔══██╗██╔══██╗╚══██╔══╝
+${YELLOW}██║░░██╗░██║░░██║${RED}██████╦╝██║░░██║░░░██║░░░
+${YELLOW}██║░░╚██╗██║░░██║${RED}██╔══██╗██║░░██║░░░██║░░░
+${YELLOW}╚██████╔╝╚█████╔╝${RED}██████╦╝╚█████╔╝░░░██║░░░
+${YELLOW}░╚═════╝░░╚════╝░${RED}╚═════╝░░╚════╝░░░░╚═╝░░░
+
+
+${NC}Welcome to ${RED}GoBot ${NC}
+"
+sleep 0.2
+logocol=1
+fi
+done
+
+
+
+flag=y
+while [[ $flag = "y" || $flag = "Y" || $flag = "yes" || $flag = "YES" ]]
+do
+read -p "Enter your preference 
+1) AWS Services (S3, Start Instances, Security Groups)
+2) Change old IMEI to New IMEI for APTS
+3) All Registrations
+4) IMEI to DeviceID Converter
+5) Clear Elasticache for a group
+6) Clear Elasticache for a user
+7) Godaddy Subdomain changes
+8) Mongo Export to CSV
+9) Disk Space usage of all servers
+10) Start Instances
+" preference
+case $preference in
+        1)
+                bash aws/allaws.sh
+		;;
+
+        2)
+                bash APTS_change_imei_no/deviceenrollment.sh
+		bash APTS_change_imei_no/momregistration.sh
+		;;
+
+        3)
+                bash registration/allreg.sh
+                ;;
+
+        4)
+                bash utility/imei2deviceidconverter/imei2deviceidconverter.sh
+		;;
+        5)
+                sh elasticache/elasticache.sh
+                ;;
+	6)	
+		sh elasticache/elasticacheuserlogin.sh
+		;;
+	7)
+		bash utility/allutility.sh
+		;;
+	8)
+		bash mongo/exporttocsv.sh
+		;;	
+	9) 
+		bash itadmin/diskspace.sh
+		;;
+	*)
+                sg=null
+                echo "Choose only the listed numbers"
+                ;;
+esac
+
+echo -e "${YELLOW}
+Do you want to continue operations with ${RED}GoBot ${YELLOW} (y/n) : ${GREEN}"
+
+
+read flag
+done
+
+
