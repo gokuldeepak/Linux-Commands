@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Collect some information about this instance
+MY_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
+MY_REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed 's/.$//')
+MY_ASG=$(aws autoscaling describe-auto-scaling-instances --region $MY_REGION --instance-ids $MY_ID --query "AutoScalingInstances[].AutoScalingGroupName" --output text)
+
+# Query the ASG
+FIRST_ID=$(aws autoscaling describe-auto-scaling-groups --region $MY_REGION --auto-scaling-group-name $MY_ASG --query "AutoScalingGroups[].Instances[0].InstanceId" --output text)
+
+if [ "$FIRST_ID" == "$MY_ID" ]; then
+        exit 0
+else
+        exit 1
+fi
+
+
+
+crontab -e
+
+* * * * * /bin/bash /opt/asg-cron.sh && /path/to/your/cron/task --and params
+
+IAM Policy.json for aws machine:
+{
+  "Statement": [
+    {
+      "Action": [
+        "autoscaling:DescribeAutoScalingGroups",
+        "autoscaling:DescribeAutoScalingInstances",
+        "ec2:DescribeInstanceAttribute",
+        "ec2:DescribeInstanceStatus",
+        "ec2:DescribeInstances"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}
+
